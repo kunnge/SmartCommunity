@@ -8,6 +8,7 @@ import com.zeroone.star.project.utils.tree.TreeNode;
 import com.zeroone.star.project.utils.tree.TreeNodeMapper;
 import com.zeroone.star.project.utils.tree.TreeUtils;
 import com.zeroone.star.project.vo.login.MenuTreeVO;
+import io.swagger.annotations.ApiParam;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -53,7 +54,7 @@ class MenuTreeNodMapper implements TreeNodeMapper<Menu> {
 public class MenuServiceImpl extends ServiceImpl<MenuMapper, Menu> implements IMenuService {
 
     @Override
-    public List<MenuTreeVO> listMenuByRoleName(List<String> roleNames) {
+    public List<MenuTreeVO> listMenuByRoleName(@ApiParam(value="用户角色",required = true) List<String> roleNames) {
         //1 定义一个存储数据库查询菜单数据的容器
         List<Menu> menus = new ArrayList<>();
         //2 遍历获取角色获取所有的菜单列表
@@ -61,6 +62,7 @@ public class MenuServiceImpl extends ServiceImpl<MenuMapper, Menu> implements IM
             //通过角色名获取菜单列表
             List<Menu> tMenus = baseMapper.selectByRoleName(roleName);
             if (tMenus != null && !tMenus.isEmpty()) {
+                //将这个角色的菜单列表添加进来
                 menus.addAll(tMenus);
             }
         });

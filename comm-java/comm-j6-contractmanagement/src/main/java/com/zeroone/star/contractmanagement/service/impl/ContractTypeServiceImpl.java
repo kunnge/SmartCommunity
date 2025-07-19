@@ -27,7 +27,6 @@ import java.awt.print.PrinterAbortException;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.zeroone.star.project.vo.ResultStatus.UNAUTHORIZED;
 
 /**
  * <p>

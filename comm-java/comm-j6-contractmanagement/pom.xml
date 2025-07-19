@@ -74,7 +74,6 @@
                     <mainClass>com.zeroone.star.contractmanagement.ContractManagementApplication</mainClass>
                 </configuration>
             </plugin>
-<!--            部署用的-->
             <plugin>
                 <groupId>io.fabric8</groupId>
                 <artifactId>docker-maven-plugin</artifactId>

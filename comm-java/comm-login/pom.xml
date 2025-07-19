@@ -66,6 +66,11 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
+        <!-- redis starter-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
@@ -76,13 +81,12 @@
                     <mainClass>com.zeroone.star.login.LoginApplication</mainClass>
                 </configuration>
             </plugin>
-<!--            部署在服务器配置-->
             <plugin>
                 <groupId>io.fabric8</groupId>
                 <artifactId>docker-maven-plugin</artifactId>
                 <configuration>
                     <!-- Docker 远程管理地址-->
-                    <dockerHost>https://192.168.88.130:2375</dockerHost>
+                    <dockerHost>https://172.16.25.128:2375</dockerHost>
                     <!-- CA 证书位置 -->
                     <certPath>/home/docker-ca</certPath>
                     <!-- 镜像设置 -->
@@ -117,7 +121,7 @@
                                     <JAVA_OPTS>-Xms256m -Xmx256m</JAVA_OPTS>
                                     <!-- 启动替换参数 -->
                                     <SPRING_ARGS>
-                                        --spring.profiles.active=test --spring.cloud.nacos.discovery.ip=192.168.88.130
+                                        --spring.profiles.active=test --spring.cloud.nacos.discovery.ip=192.168.220.128
                                     </SPRING_ARGS>
                                 </env>
                             </run>
@@ -132,15 +136,15 @@
                     <!-- 数据库连接信息配置 -->
                     <dbConfig>
                         <!-- 数据库主机地址 -->
-                        <host>192.168.220.128</host>
+                        <host>8.148.69.44</host>
                         <!-- 数据库端口 -->
-                        <port>3306</port>
+                        <port>2306</port>
                         <!-- 数据库名称 -->
-                        <dbname>test</dbname>
+                        <dbname>tt</dbname>
                         <!-- 数据库用户名 -->
                         <username>root</username>
                         <!-- 数据库密码 -->
-                        <password>123456</password>
+                        <password>Admin123qwertyuiop</password>
                     </dbConfig>
                     <!-- 生成代码输出根目录 -->
                     <outDir>${project.basedir}/src/main/java</outDir>

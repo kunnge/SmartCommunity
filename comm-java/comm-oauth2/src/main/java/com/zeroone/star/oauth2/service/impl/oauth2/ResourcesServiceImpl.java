@@ -1,9 +1,9 @@
 package com.zeroone.star.oauth2.service.impl.oauth2;
 
 import com.zeroone.star.oauth2.entity.Menu;
-import com.zeroone.star.oauth2.entity.Role;
+import com.zeroone.star.oauth2.entity.Store;
 import com.zeroone.star.oauth2.service.IMenuService;
-import com.zeroone.star.oauth2.service.IRoleService;
+import com.zeroone.star.oauth2.service.IStoreService;
 import com.zeroone.star.project.constant.RedisConstant;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
@@ -31,7 +31,7 @@ public class ResourcesServiceImpl {
     @Resource
     private IMenuService menuService;
     @Resource
-    private IRoleService roleService;
+    private IStoreService storeService;
 
     /**
      * 加载资源与角色缓存
@@ -43,19 +43,18 @@ public class ResourcesServiceImpl {
             redisTemplate.delete(RedisConstant.RESOURCE_ROLES_MAP);
         }
 
-        // TODO：缓存权限资源逻辑,需要根据自己数据库设计来初始化--start
+        // 缓存权限资源逻辑：菜单路径与角色的映射关系
         // 定义缓存map
         Map<String, List<String>> resourceRolesMap = new TreeMap<>();
         // 1 获取所有菜单
         List<Menu> tMenus = menuService.listAllLinkUrl();
         tMenus.forEach(menu -> {
             // 2 获取菜单对应的角色
-            List<Role> rolesMenu = roleService.listRoleByMenuPath(menu.getLinkUrl());
+            List<Store> rolesMenu = storeService.listRoleByMenuPath(menu.getLinkUrl());
             List<String> roles = new ArrayList<>();
-            rolesMenu.forEach(role -> roles.add(role.getKeyword()));
+            rolesMenu.forEach(role -> roles.add(role.getName()));
             resourceRolesMap.put(menu.getLinkUrl(), roles);
         });
-        // TODO：缓存权限资源逻辑,需要根据自己数据库设计来初始化--end
 
         // 将资源缓存到redis
         redisTemplate.opsForHash().putAll(RedisConstant.RESOURCE_ROLES_MAP, resourceRolesMap);

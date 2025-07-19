@@ -37,4 +37,10 @@ public class LoginDTO {
      */
     @ApiModelProperty(value = "验证码", example = "999818")
     private String code;
+
+    /**
+     * 验证码UUID
+     */
+    @ApiModelProperty(value = "验证码", example = "uuid-1234-5678")
+    private String uuid;
 }

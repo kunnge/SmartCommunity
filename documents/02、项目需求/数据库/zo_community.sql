@@ -2900,6 +2900,7 @@ CREATE TABLE `business_pay_fee_config`  (
   `scale` varchar(12) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '1' COMMENT '进位 ',
   `pay_online` varchar(12) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'Y' COMMENT '是否线上缴费 Y 是 N 否',
   `prepayment_period` varchar(40) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '预付期，单位为天',
+  `user_id` VARCHAR(64) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '操作用户ID'
   INDEX `idx_bpfc_config_id`(`config_id` ASC) USING BTREE,
   INDEX `idx_bpfc_b_id`(`b_id` ASC) USING BTREE,
   INDEX `idx_pfc_config_id`(`config_id` ASC) USING BTREE,
@@ -11118,7 +11119,7 @@ CREATE TABLE `u_user`  (
   `name` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '名称',
   `email` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '邮箱地址',
   `address` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '现居住地址',
-  `password` varchar(128) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '用户密码，加密过后',
+  `password` varchar(256) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '用户密码，加密过后',
   `location_cd` varchar(8) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '用户地区，编码详见 u_location',
   `age` int NULL DEFAULT NULL COMMENT '用户年龄',
   `sex` varchar(1) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '性别，0表示男孩 1表示女孩',

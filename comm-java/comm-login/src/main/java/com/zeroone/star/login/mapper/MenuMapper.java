@@ -19,5 +19,6 @@ public interface MenuMapper extends BaseMapper<Menu> {
      * @param roleName 角色名
      * @return 返回菜单列表
      */
+    //TODO:sql语句还有一小块还没写好
     List<Menu> selectByRoleName(String roleName);
 }

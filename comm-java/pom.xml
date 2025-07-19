@@ -38,8 +38,24 @@
         <module>comm-gateway</module>
         <module>comm-login</module>
         <module>comm-doc</module>
+        <module>comm-j1-dashboard</module>
+        <module>comm-j1-menumana</module>
+        <module>comm-j2-configmanager</module>
+        <module>comm-j2-orgmanager</module>
+        <module>comm-j3-cachemanage</module>
+        <module>comm-j3-reportconfiguration</module>
+        <module>comm-j3-systemmanage</module>
+        <module>comm-j3-merchantmanage</module>
+        <module>comm-j4-datamanager</module>
+        <module>comm-j4-orgmanager</module>
+        <module>comm-j5-communityinfo</module>
+        <module>comm-j5-communitymanage</module>
         <module>comm-j6-contractmanagement</module>
         <module>comm-j6-datamanagement</module>
+        <module>comm-j7-parkmanage</module>
+        <module>comm-j7-propertymanage</module>
+        <module>comm-j8-housemanagement</module>
+        <module>comm-j8-patrolmanagement</module>
     </modules>
     <properties>
         <!-- 打包的时候忽略测试案例调用 -->

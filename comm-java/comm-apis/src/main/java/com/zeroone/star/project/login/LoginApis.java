@@ -4,6 +4,7 @@ import com.zeroone.star.project.dto.login.LoginDTO;
 import com.zeroone.star.project.dto.login.Oauth2TokenDTO;
 import com.zeroone.star.project.dto.login.RefreshTokenDTO;
 import com.zeroone.star.project.vo.JsonVO;
+import com.zeroone.star.project.vo.login.CaptchaVO;
 import com.zeroone.star.project.vo.login.LoginVO;
 import com.zeroone.star.project.vo.login.MenuTreeVO;
 
@@ -19,6 +20,13 @@ import java.util.List;
  * @version 1.0.0
  */
 public interface LoginApis {
+
+    /**
+     * 获取验证码
+     * @return 返回验证码信息（包含uuid和图片base64编码）
+     */
+    JsonVO<CaptchaVO> getCaptcha();
+
     /**
      * 授权登录接口
      * @param loginDTO 登录数据

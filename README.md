@@ -8,7 +8,7 @@
 
 ## 项目简介
 
-**智慧社区**是一款社区管理系统，目标在于：打造一套数字化智能物业管理系统，帮助物业公司最大程度降本增效；打造智慧社区，提供丰富的社区增值服务，便利于业主，提升住家幸福感；逐步打造`IoT`智能物联系统，多样化硬件对接，整合硬件设备，打破设备信息孤岛，实现智能互联；提供商家入驻，构建社区商城系统。
+**零壹社区**是一款社区管理系统，目标在于：打造一套数字化智能物业管理系统，帮助物业公司最大程度降本增效；打造智慧社区，提供丰富的社区增值服务，便利于业主，提升住家幸福感；逐步打造`IoT`智能物联系统，多样化硬件对接，整合硬件设备，打破设备信息孤岛，实现智能互联；提供商家入驻，构建社区商城系统。
 
 功能蓝图涵盖：房产、业主、 线上缴费、线上报修、投诉建议、采购、巡检、停车、门径、道闸、监控、工作流、问卷和公告等等。
 
@@ -189,6 +189,35 @@ https://docs.spring.io/spring-data/mongodb/docs/current/reference/html/#requirem
 | `MongoDB`   | 4.4.17                                                       | https://www.mongodb.com/try/download/community               |
 | `Jenkins`   | latest                                                       | https://www.jenkins.io/zh/doc/book/installing/               |
 
+## 部分功能预览图
+
+登录
+
+![pic](./documents/00、preview-pic/01.png)
+
+组织信息
+
+![pic](./documents/00、preview-pic/02.png)
+
+![pic](./documents/00、preview-pic/03.png)
+
+员工信息
+
+![pic](./documents/00、preview-pic/04.png)
+
+![pic](./documents/00、preview-pic/05.png)
+
+数据统计
+
+![pic](./documents/00、preview-pic/06.png)
+
+![pic](./documents/00、preview-pic/07.png)
+
+![pic](./documents/00、preview-pic/08.png)
+
+![pic](./documents/00、preview-pic/09.png)
+
+
 ## 特别鸣谢
 
 `zero-one-community`的诞生离不开开源软件和社区的支持，感谢以下开源项目及项目维护者：
@@ -203,5 +232,3 @@ https://docs.spring.io/spring-data/mongodb/docs/current/reference/html/#requirem
 - `oatpp`：https://github.com/oatpp/oatpp
 
 同时也感谢其他没有明确写出来的开源组件提供给与维护者。
-
-https://space.bilibili.com/1653229811?spm_id_from=333.1007.0.0)
